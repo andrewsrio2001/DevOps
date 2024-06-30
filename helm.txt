@@ -1,0 +1,95 @@
+hehelm -h --- help command
+helm completion bash  --- to display the output of shell script
+helm list  ---- to display the version
+helm create (name) ---- to create the helm chart
+helm depandency build (folder name)  ---- to build the dependency on chart dir
+helm dep list (name) ---- to list the dependency what we can use on it
+helm dep update (dir name) --- it will update the chat folder in a current version
+helm dep update (dir name) ---- it will update all pakage
+helm env  ----- to display the helm environment
+helm get (all,hooks,values,notes,manifest) (name) ---- to display the information 
+helm install (name) (dir helm name) (opction --set (name=value)) ----- to deploy the k8s
+helm history (name) ---- to display the history
+helm del (kube-name) (helm name)  ---- delete the chart
+helm lint (chart name)  ---- check the error to run
+helm ls ---- to list the helm pakages
+helm pakage (name)  ----- to convert into compressed file
+helm diff upgrade (kub name) ( helm name) -- value (name)/values.yaml ---- to check the changes on it
+helm pull (chart name)  ---- to pull the helm chart name
+helm repo add
+helm repo update
+helm repo remove
+helm rollback (name) 1  ---- to create another one roll back
+helm search hub (name) --- to search the chart on cli 
+helm search repo (name) --- to search the chart on cli 
+helm status name
+helm install --debug --dry-run (relese-name) (chart folder)  ---- to check the release without install it
+helm get manifest (relese-name)  ---- to display the set names
+helm install --dry-run --debug --set costCode=SS45877
+ sai ./mychart/ --- to set from input using set command
+ 
+--set (name=value)
+sprig library to use function on helm 
+
+{{ .Values.data}} ---- to pass the value from the functions
+
+{{- if eq .Values.data "us-e" }}
+style: true
+{{- end }} ---- to use (-) in starting to remove the new line
+
+
+{{- with .Values.tags }}
+{{- toYaml . | nindent 2 }}  --- to print total list value
+machine: {{ .machine }}
+{{- end }}
+------ doesn't use the multiple line
+
+notes.txt ---- is used to write a commands in the exucte format
+helm template sai ./mychart --- to display the template 
+helm get values name --- to get a used values
+helm history name --- to display error and log
+--atomic  ---- when chat goes error it forward to old release
+--timeout 7m3s ---- to control the time out
+--fource --- when upgrade happend it will stop all the pods and restart it
+--cleanup-on-failure --- when upgrade goes fail total fail log and seacute will delete automaticly
+
+chart.yaml {
+apiVersion:
+name:
+description:
+icon:
+keywords:
+home:
+sources:
+maintainers:
+}
+helm package name ----- to convert into zip file
+helm lint name ---- to check the error log info
+
+functions{
+- to avoid a blank spaces
+include --- to use pipeline
+qoutes
+template
+upper
+default
+nindent 4  --- new line with indent of 4 spaces
+}
+
+define variable
+{{ $myValue := "sai" }} --- assign a value
+{{ $myValue = "gok" }} --- reassign a value
+{{-if myValue }}
+
+for loop
+{{- range .Values.mychart.contry }}
+  {{ . | upper | qoutes }}
+{{- end }} 
+
+for loop disnory
+{{ - range $key, $value :=  .Values.image }}
+  - {{ $key }}: {{ $value }}
+{{- end }}
+
+helm get manifest name  ---- to see the detail file
+helm depandency update name ---- to update depandencny on chart
