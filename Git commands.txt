@@ -1,0 +1,75 @@
+# Git Commands Cheat Sheet
+
+## Initialization and Cloning
+
+- **git init**
+  Initialize a new Git repository in the current directory.
+
+- **git clone [url]**
+  Clone a remote repository into a new directory.
+
+## Basic Operations
+
+- **git status**
+  Show the current state of the working directory and staging area.
+
+- **git add [file]**
+  Add file changes from the working directory to the staging area.
+
+- **git commit -m "[message]"**
+  Record changes staged in the current branch with a descriptive message.
+
+- **git push [remote] [branch]**
+  Upload local branch commits to the remote repository branch.
+
+- **git pull [remote] [branch]**
+  Fetch and integrate changes from the remote repository to the current branch.
+
+## Branching and Merging
+
+- **git branch**
+  List all local branches. Use `-r` to list remote branches.
+
+- **git checkout [branch]**
+  Switch to another branch. Create `-b [branch]` to create and switch to a new branch.
+
+- **git merge [branch]**
+  Combine specified branch history into the current branch.
+
+## Remote Repositories
+
+- **git remote -v**
+  List all remote repositories configured. `-v` shows URLs of remote repositories.
+
+## Viewing and Comparing Changes
+
+- **git log**
+  Display commit history for the current branch.
+
+- **git diff [file]**
+  Show changes between commits, commit and working tree, etc.
+
+## Miscellaneous
+
+- **git stash**
+  Temporarily save changes that are not ready to be committed.
+
+- **git tag [tagname]**
+  Create a tag reference to a specific commit.
+
+- **git reset [file]**
+  Unstage file changes from the staging area.
+
+- **git fetch [remote]**
+  Download objects and refs from another repository.
+
+- **git revert [commit]**
+  Revert a commit by applying a new commit with the inverse of the specified commit.
+
+## Configuration
+
+- **git config --global user.name "[name]"**
+  Set the global username for Git.
+
+- **git config --global user.email "[email]"**
+  Set the global email for Git.
